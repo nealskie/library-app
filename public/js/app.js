@@ -1,316 +1,540 @@
-"use strict";
+  "use strict";
 
-class App{
-  constructor(){
-  
-  }
+  class App{
+    constructor(){
+      this.book = [
+        {
+          "id": 1,
+          "name": "Hunger Games",
+          "description": "The Hunger Games is a 2012 American science fiction action film directed by Gary Ross and based on the novel of the same name by Suzanne Collins. It is the first installment in The Hunger Games film series and was produced by Nina Jacobson and Jon Kilik, with a screenplay by Ross, Collins, and Billy Ray. The film stars Jennifer Lawrence, Josh Hutcherson, Liam Hemsworth, Woody Harrelson, Elizabeth Banks, Lenny Kravitz, Stanley Tucci, and Donald Sutherland.[5] The story takes place in a dystopian post-apocalyptic future in the nation of Panem, where boys and girls between the ages of 12 and 18 must take part in the Hunger Games, a televised annual event in which the tributes are required to fight to the death until there is only one survivor. Katniss Everdeen (Lawrence) volunteers to take her younger sister's place. Joined by her district's male tribute, Peeta Mellark (Hutcherson), Katniss travels to the Capitol to train for the Hunger Games under the guidance of former victor Haymitch Abernathy (Harrelson).",
+          "image": "img/sample1.jpg",
+          "author": "yuson",
 
-  render(html, component){
+        
+        },
+        {
+          "id": 2,
+          "name": "Es6 & Beyond",
+          "description": "No matter how much experience you have with JavaScript, odds are you don’t fully understand the language. As part of the You Don’t Know JS series, this compact guide focuses on new features available in ECMAScript 6 (ES6), the latest version of the standard upon which JavaScript is built.",
+          "image": "img/es6.jpg",
+         
+        },
+        {
+          "id": 3,
+          "name": "Internet of Things",
+          "description": "Internet of Things (IoT) refers to physical and virtual objects that have unique identities and are connected to the internet to facilitate intelligent applications that make energy, logistics, industrial control, retail, agriculture and many other domains smarter. Internet of Things is a new revolution of the Internet that is rapidly gathering momentum driven by the advancements in sensor networks, mobile devices, wireless communications, networking and cloud technologies. Experts forecast that by the year 2020 there will be a total of 50 billion devices/things connected to the internet. ",
+          "image": "img/internet.jpg",
+        },
+        {
+          "id": 4,
+          "name": " First",
+          "description": "In First, readers come alongside Rich as he trains for and competes in back-to-back-to-back CrossFit World Championships. Along the way, Rich shares invaluable training tips, motivational techniques, and spiritual insights that, in keeping with the CrossFit philosophy, will prepare you to respond to any real-life physical, mental and spiritual challenge.",
+          "image": "img/rich.jpg",
+         
+        },
+        {
+          "id": 5,
+          "name": "Dear John",
+          "description": "Dear John is a 2010 American romantic drama-war film starring Amanda Seyfried and Channing Tatum. It was made by Screen Gems and was released theatrically in North America on February 5, 2010. The film was directed by Lasse Hallström, and it is an adaptation of Nicholas Sparks' 2006 novel of the same name. It follows the life of a soldier (Channing Tatum) after he falls in love with a young woman (Amanda Seyfried). They decide to exchange letters to each other after he is deployed to the war",
+          "image": "img/john.jpg",
+        },
+        {
 
-    component.innerHTML += html;
-  }
+          "id": 6,
+          "name": "HTML & CSS",
+          "description": "Every day, more and more people want to learn some HTML and CSS. Joining the professional web designers and programmers are new audiences who need to know a little bit of code at work (update a content management system or e-commerce store) and those who want to make their personal blogs more attractive. Many books teaching HTML and CSS are dry and only written for those who want to become programmers, which is why this book takes an entirely new approach.",
+          "image": "img/sample2.jpg",
+        },
+        {
 
-  reRender(html, component){
+          "id": 7,
+          "name": "European History for Dummies",
+          "description": "The history of Europe is rich, complex, vibrant, and at times violent; it has influenced many countries throughout the world and has itself been influenced by many countries. In the light-hearted European History For Dummies, historian Sean Lang explores the countries, conflicts, people, institutions, disasters, and triumphs that have helped shape modern-day Europe, packing in tons of facts alongside the fun. Chapters range from Celts without Kilts and What a Way to Run a Republic! to I Capture Quite a Few Castles, Reformation Ruckus, and The War to End All Wars.",
+          "image": "img/sample3.jpg",
+        },
+         {
 
-    component.innerHTML = html;
-  }
+          "id": 8,
+          "name": " MAC ARTHUR",
+          "description": "Macarthur or the Red Book is a 2007 novel by Filipino author Bob Ong. It is the sixth published work from Ong. As with all Bob Ong's published novels, it is notable for its use of contemporary street Filipino words. It is also notable for its departure from the usual Bob Ong formula of using humor to comment on the various ironies of Filipino culture. Instead, it offers a gritty, realistic look at life in a Philippine slum community.",
+          "image": "img/mac.jpg",
+        },
+         {
 
-}
+          "id": 9,
+          "name": "Moby Dick",
+          "description": "Moby-Dick; or, The Whale is a novel by American writer Herman Melville, published in 1851 during the period of the American Renaissance. Sailor Ishmael tells the story of the obsessive quest of Ahab, captain of the whaler the Pequod, for revenge on Moby Dick, the white whale that on the previous whaling voyage bit off Ahab's leg at the knee",
+          "image": "img/mob.jpg",
+          "Author": "yuson",
+        },
+         
+         
+      ];
+        
 
-class Component extends App{
-
-constructor(){
-  super();
-}
-
-recipeLayout(){
-  this.render(`  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Nealskie Library</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>
-      <a href="collapsible.html">CreateBooks</a>
-      </li>
-        <li>
-        <a href="sass.html">BookDetails</a>
-        </li>
-        <li><a href="badges.html"></a>
-        </li>
-       
-      </ul>
-    </div>
-  </nav>
-  <br>
-
-  <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
-    <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
-    <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
-    <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
-  </div>
-
-  <a class="waves-effect waves-light btn-large">Get Started</a>
-
-   <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">welcome to our library</h5>
-               
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links:</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">CreateBooks</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">BookDetails</a></li>
-              
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2016 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More links</a>
-            </div>
-          </div>
-        </footer>
-            
 
     
+    }
+
+
+
+    render(html, component){
+
+      component.innerHTML += html;
+    }
+
+    reRender(html, component){
+
+      component.innerHTML = html;
+    }
+
+
+ 
+    bookDesign(){
+      let id = document.getElementById('kill');
+      let name = document.getElementById('kill2');
+      let description = document.getElementById('kill3');
+      let image = document.getElementById('kill4');
+    
+
+      let book = {      
+        "id": id.value,
+        "name": name.value,
+        "description": description.value,
+        "image": image.value,
+       
+      };
+
+
+      this.book.push(book);
+
+      
+      id.value = name.value = description.value = image.value = ''; 
+    } 
+
+    bookDelete(key){
+      let r = this.book;
+      for(let i=0;i<r.length;i++){
+        if(r[i].id == key){
+          this.book.splice(i,1);
+          break;
+        }
+      }   
+      this.bookList();
+    }
+
+    
+
+    SearchBookById(id){
+      let r = this.book;
+      for(let i=0;i<r.length;i++){
+        if(id==r[i].id){
+          return r[i];
+        }
+      }
+    } 
+
+    SearchBook(name){
+      let objects = [];
+      let r = this.book;
+      for(let i=0;i<r.length;i++){
+        let expr = (r[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
+        if(expr){
+          objects.push(r[i]);
+        }
+      }
+      return objects;
+    }
+
+  
+  }   
+
+
+class Component extends App{
+    constructor(){
+      
+      super();
+    }
+
+
+        bookDesignLayout(){
+          let html = `
+           
+      
+                <nav>
+                <div class="nav-wrapper  grey darken-4">
+                <img class="" src="img/owl.png" style="margin-top:6px;" />
+                  <a href="#" onclick="component.bookList()" class="brand-logo">  Nealskie Library App </a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li>
+                  <li><a href="#" onclick="component.Homepage()">HomePage</a></li>
+                <li><a href="#" onclick="component.bookList()">List of Books</a></li>  
+              <li><a href="#" onclick="component.latestBook()">Create Books</a></li>
+              
+                  </ul>
+
+                 
+                </div>
+                </nav>
+
+                  
+
+
+             
+
+                
+
+              
+                  
+
+
+            </div>
+
+                    <div id="Homepage"></div>
+                    <div id="Homepage"></div>
+                    <div id="bookRecent"></div>
+                    <div id="viewBook"></div>
+                    <div id="bookList"></div>
+                    <div id="latestBook"></div>
+                    
+                    
+                              <footer class="page-footer  grey darken-4">
+                      <div class="container">
+                        <div class="row">
+               
+                            
+                                     
+
+                          </div>
+                          
+                          <div class="col l4 offset-l2 s12 ">
+                          <center>
+                            <h5 class="white-text ">Nealskie Library  App</h5>
+                           
+                            <ul>
+                              <li><a href="#" onclick="component.Homepage()">HomePage</a></li>
+                              <li><a href="#" onclick="component.bookList()">List of Books</a></li>  
+                              <li><a href="#" onclick="component.latestBook()">Create Books</a></li>
+                             
+                          </center>
+                            
+                                
+                            </ul>
+                            </div>
+                           
+                       
+                        
+                        </div>
+                      </div>
+                <center>
+               <div clas
+                         <ul>@Nealskie Library App</ul>
+                         
+                        </center>  
+                        </div>
+                      </div>
+                      
+                    </footer>
+
+          `;
+
+          this.reRender(`
+            ${html}
+
+            `,document.getElementById("app"));
+          this.bookRecent();    
+        }
+
+       
+
+        viewBook(id){
+          let r = this.SearchBookById(id);
+
+          let html = `
+
+
+       
+
+
+
+            <h5 class="center-align">${r.name}</h5>
+            <div class="row">       
+              <div class="col s12 m12">
+                <div class="card horizontal small">
+                  <div class="card-image">
+                    <img src="${r.image}">
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content">
+                      <p>${r.description}</p>
+                    </div>
+                  <div class="card-action small"> 
+                     <span onclick="component.bookList()" class="new badge small" data-badge-caption="">Back to List</span>
+                     <span onclick="component.bookDelete(${r.id})" class="new badge small red" data-badge-caption="">Delete Base</span>
+                   
+                    </div>            
+                  </div>     
+                </div>   
+                
+              </div>      
+            </div>
+          `;
+
+          this.reRender(`   
+            ${html}     
+            `,document.getElementById("viewBook"));
+          $('#viewBook').show();
+          $('#bookRecent').hide();
+          $('#bookList').hide();
+          $('#latestBook').hide();
+
+            $('#Homepage').hide();
+        }
+
+        bookList(){
+          let html = `
+
+
+
+
+            <br/>
+              <nav>
+                <div class="nav-wrapper white">
+                <form>
+                  <div class="input-field">       
+                    <input onkeyup="component.bookItems(this.value)" id="search" type="search" placeholder="Search" required>
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                  </div>
+                </form>
+              </div>
+            </nav>
+            <br/>
+
+          `;
+
+          html += `
+            <div class="row" id="bookItems">
+          `;
+          let r = this.book;
+          for(let i=0;i<r.length;i++){
+            html+= `
+              <div class="col s12 m4">
+                <div class="card small hoverable">
+                  <div class="card-image">
+                    <img src="${r[i].image}">
+                    <span class="card-title">${r[i].name}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>${r[i].description}</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#" onclick="component.viewBook(${r[i].id})">More Details</a>
+                  </div>
+
+                </div>
+              </div>
+            `;
+          }
+
+          html += `</div>`;
+
+          this.reRender(`
+            ${html}
+            `,document.getElementById("bookList"));
+          $('#bookList').show();
+          $('#viewBook').hide();
+          $('#bookRecent').hide();
+          $('#latestBook').hide();    
+               $('#Homepage').hide();
+        }
+
+       
+
+        bookItems(name){
+          let html = ``;
+          let r = this.SearchBook(name);
+          for(let i=0;i<r.length;i++){
+            html+= `
+              <div class="col s12 m4">
+                <div class="card small hoverable">
+                  <div class="card-image">
+                    <img src="${r[i].image}">
+                    <span class="card-title">${r[i].name}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>${r[i].description}</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#" onclick="component.viewBook(${r[i].id})">More</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }   
+          this.reRender(`
+            ${html}
+            `,document.getElementById("bookItems"));
+          $('#bookList').show();
+          $('#viewBook').hide();
+          $('#bookRecent').hide();  
+          $('#latestBook').hide();
+              $('#Homepage').hide();    
+        }
+
+
+        bookRecent(){
+          
+          let html = `
+
+           <div class="slider">
+              <ul class="slides">
+                <li>
+                  <img src="img/collections.jpeg"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>Welcome to Nealskie Library App</h3>
+                    <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+                   
+                  </div>
+                </li>
+                <li>
+                  <img src="img/cover.jpg"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>Welcome to Nealskie Library App</h3>
+                    <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+                    
+                  </div>
+                </li>
+                <li>
+                  <img src="img/books.jpg"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>Welcome to Nealskie Library App</h3>
+                    <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+                    
+                  </div>
+                </li>
+                <li>
+                  <img src="img/data.jpeg"> <!-- random image -->
+                  <div class="caption center-align">
+                    <h3>Welcome to Nealskie Library App</h3>
+                    <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+                    
+                  </div>
+                </li>
+              </ul>
+            </div>
+          
+            
+        
+             
+           
+
+              
+
+               
+
+           
+
+          
+                   <div class="row">
+          `;
+
+          let r = this.book;
+          let count = 0;
+          for(let i=(r.length-1);i>=0;i--){
+            if(count++ === 6)break;
+            html+= `
+              <div class="col s12 m4">
+                <div class="card small hoverable">
+                  <div class="card-image">
+                    <img src="${r[i].image}">
+                    <span class="card-title">${r[i].name}</span>
+                  </div>
+                  <div class="card-content">
+                    <p>${r[i].description}</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#" onclick="component.viewBook(${r[i].id})">More Details</a>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          html += `</div>`;
+
+          this.render(`   
+            ${html}
+            `,document.getElementById("bookRecent"));
+        }
+
+        latestBook(){
+          let html = `
+
+         
+           
+                
+             <div class="row">
+                  <div class="input-field col s6 ">
+                    <input disabled value="${this.book.length+1}" id="kill" type="text"class=" vintage" >
+                  </div>
+                    <div class="row">
+                <div class="input-field col s6 ">
+                    <input id="kill2" type="text" class=" vintage">
+                    <label for="kill2">Enter Book Name</label>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="input-field col s6 ">
+                    <input id="kill3" type="text" class="deep-white lighten-1">
+                   <label for="kill3">Enter Book Details</label>
+                  </div>
+
+                <div class="row">
+                  <div class="input-field col s6 ">
+                    <input id="kill4" type="text" class="deep-white lighten-1">
+                    <label for="kill4"> Enter Link Address Pictures</label>
+                  </div>
+              <div align="center">
+             <button onclick="component.bookList()" class="btn waves-effect waves-light">Back</button>
+            
+                   <button onclick="component.bookDesign()" class="btn waves-effect waves-light">Save</button>
+               </div>
+           
+               
+              
             
 
+          `;
 
-    `,document.getElementById("app"));
+          this.reRender(`
+            ${html}
+            `,document.getElementById("latestBook"));
+          $('#latestBook').show();
+          $('#bookList').hide();
+          $('#viewBook').hide();
+          $('#bookRecent').hide(); 
+          $('#Homepage').hide();    
+        }
 
-}
-}
+        Homepage(){
+          let html=`
 
 
 
-let component = new Component();
-component.recipeLayout();
+          `;
+           this.reRender(`
+              ${html}
+              `,document.getElementById("latestBook"));
+            $('#latestBook').hide();
+            $('#bookList').hide();
+            $('#viewCar').hide();
+            $('#bookRecent').show();  
+            $('#Homepage').hide();  
 
+        }
 
-// "use strict";
-
-// class App{
-//  constructor(){
-//    this.movies = [
-//      {
-//        "Title":"Winter Is Coming",
-//        "Year":"2011",
-//        "Director":"Timothy Van Patten",
-//        "Poster":"img/winteriscoming.jpg",
-//        "Actors":"Sean Bean, Mark Addy, Nikolaj Coster-Waldau, Michelle Fairley"
-//      },
-//      {
-//        "Title":"The North Remembers",
-//        "Year":"2012",
-//        "Director":"Alan Taylor",
-//        "Poster":"http://ia.media-imdb.com/images/M/MV5BNzc4NDQ5MzA1N15BMl5BanBnXkFtZTcwMDQwNTgzNw@@._V1_SX300.jpg",
-//        "Actors":"Peter Dinklage, Lena Headey, Nikolaj Coster-Waldau, Michelle Fairley"
-//      },
-//      {
-//        "Title":"Valar Dohaeris",
-//        "Year":"2013",
-//        "Director":"Daniel Minahan",
-//        "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMTk4NjcwMzAzN15BMl5BanBnXkFtZTcwNzgxNTcyOQ@@._V1_SX300.jpg",
-//        "Actors":"Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington"
-//      },
-//      {
-//        "Title":"Two Swords",
-//        "Year":"2014",
-//        "Director":"D.B. Weiss",
-//        "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyNDYxMDA1M15BMl5BanBnXkFtZTgwNDYyNTI1MTE@._V1_SX300.jpg",
-//        "Actors":"Peter Dinklage, Nikolaj Coster-Waldau, Lena Headey, Emilia Clarke"
-//      },
-//      {
-//        "Title":"The Wars to Come",
-//        "Year":"2015",
-//        "Director":"Michael Slovis",
-//        "Poster":"https://images-na.ssl-images-amazon.com/images/M/MV5BMTk4ODQ0ODQyMl5BMl5BanBnXkFtZTgwMDczODYyNDE@._V1_SX300.jpg",
-//        "Actors":"Peter Dinklage, Nikolaj Coster-Waldau, Lena Headey, Emilia Clarke"
-//      },
-//      {
-//        "Title":"The Red Woman",
-//        "Year":"2016",
-//        "Director":"Jeremy Podeswa",
-//        "Poster":"img/redwoman.jpg",
-//        "Actors":"Peter Dinklage, Nikolaj Coster-Waldau, Lena Headey, Emilia Clarke"
-//      }
-//    ];
-//  }
-
-//  render(html, component){
-
-//    component.innerHTML += html;
-//  }
-
-//  reRender(html, component){
-
-//    component.innerHTML = html;
-//  }
-
-//  createMovie(){
-//    let t = document.getElementById('newTitle');
-//    let y = document.getElementById('newYear');
-//    let d = document.getElementById('newDirector');
-//    let p = document.getElementById('newPoster');
-//    let a = document.getElementById('newActors');
-
-//    let movie = {"Title":t.value,"Year":y.value,"Director":d.value,"Poster":p.value,"Actors":a.value};
-//    this.movies.push(movie);
-
-//    t.value = y.value = d.value = p.value = a.value = ''; //Clear Fields
-//    this.movieListInfo();
-//  }
-
-//  deleteMovie(key){   
-//    let table = document.getElementById('movieListInfo');
-//    table.deleteRow(key);
-//    this.movies.splice(key,1);
-
-//    // let m = this.movies;
-//    // let dummy = [];
-//    // for(let i=0;i<m;i++){
-//    //  if(key!=i){
-//    //    dummy.push(m[i]);
-//    //  }
-//    // }
-//    // this.movies = dummy;
-//    let details = document.getElementById('movieDetails');
-//    details.innerHTML = "";
-//    this.movieListInfo();   
-//  }
-
-//  updateMovie(key){
-//    let y = document.getElementById('updateYear');
-//    let d = document.getElementById('updateDirector');
-//    let a = document.getElementById('updateActors');
-
-//    let m = this.movies[key];
-//    let movie = {"Title":m.Title,"Year":y.value,"Director":d.value,"Poster":m.Poster,"Actors":a.value};
-
-//    this.movies[key] = movie;
-//    let details = document.getElementById('movieDetails');
-//    details.innerHTML = "";
-//    this.movieListInfo();     
-//  }
-// }
-
-// class Component extends App{
-//  constructor(){
-//    super();
-//  }
-
-//  movieList(){
-//    this.render(
-//      `
-//  <nav class="navbar navbar-default" role="navigation">
-//  <div class="navbar-header">
-//  <button type="button" class="navbar-toggle" data-toggle="collapse"
-//  data-target="#example-navbar-collapse">
-//  <span class="sr-only">Toggle navigation</span>
-//  <span class="icon-bar"></span>
-//  <span class="icon-bar"></span>
-//  <span class="icon-bar"></span>
-//   </button>
-//   <a class="navbar-brand" href="#">Movie App</a>
-//   </div>
-//   <div class="collapse navbar-collapse" id="example-navbar-collapse">
-//   <ul class="nav navbar-nav">
-//   <li class="active"><a href="#">New Movie</a></li>
-//   <li><a href="#">Movie List</a></li>   
-//   </ul>
-//   </div>
-//  </nav>
-//        <div class="row">
-//          <div class="col col-sm-6">
-//            <div id="movieCreate"></div>            
-//          </div>
-//          <div class="col col-sm-6">
-//            <h1>Movie List</h1>
-//            <table id="movieList" class="table">
-//              <thead>
-//                <tr>
-//                  <th>Title</th>
-//                  <th>Year</th>
-//                  <th>Action</th>
-//                </tr>
-//              </thead>
-//              <tbody id="movieListInfo"></tbody>
-//            </table>
-//          </div>
-//        </div>
-//        <div id="movieDetails"></div>
-//      `
-//      ,document.getElementById('app'));
-//    this.movieListInfo();
-//  }
-
-//  movieListInfo(){
-//    let html = "";
-//    let m = this.movies;
-//    for(let i=0;i<m.length;i++){
-//      html += `
-//        <tr>
-//          <td>${m[i].Title}</td>
-//          <td>${m[i].Year}</td>
-//          <td><button class="btn btn-primary"  onclick="component.movieDetails(${i})">Show Details</button></td>
-//        </tr>
-//      `;
-//    }
-//    this.reRender(html,document.getElementById('movieListInfo'));
-//  }
-
-//  movieDetails(key){
-//    this.reRender(
-//      `
-//        <h1>Movie Details</h1>
-//        <div class="media">
-//            <div class="media-left">
-//                <a href="#">
-//                    <img class="media-object img-thumbnail" src="${this.movies[key].Poster}" width="220" />
-//                </a>
-//            </div>
-//            <div class="media-body" id="movieDetailsInfo">
-//                <h4 class="media-heading">${this.movies[key].Title}</h4>
-//                Year: ${this.movies[key].Year}<br/>
-//            Director: ${this.movies[key].Director}<br/>
-//            Actors: ${this.movies[key].Actors}<br/>
-//            <button class="btn btn-success" onclick="component.movieUpdate(${key})">Update</button>
-//            <button class="btn btn-danger" onclick="component.deleteMovie(${key})">Delete</button>
-//          </div>  
-//        </div>      
-//      `,document.getElementById('movieDetails'));
-//  }
-
-//  movieCreate(){
-//    this.render(
-//      `
-//        <h1>New Movie</h1>
-//        Title: <input class="form-control" id="newTitle" type="" placeholder="Enter Title" /><br/>
-//        Year: <input class="form-control" id="newYear" type="" placeholder="Enter Title" /><br/>
-//        Director: <input class="form-control" id="newDirector" type="" placeholder="Enter Director" /><br/>
-//        Poster: <input class="form-control" id="newPoster" type="" placeholder="Enter Poster" /><br/>
-//        Actors: <input class="form-control" id="newActors" type="" placeholder="Separate using comma" /><br/>
-//        <button class="btn btn-primary" onclick="component.createMovie()">Create</button>
-//      `,document.getElementById('movieCreate'));
-//  }
-
-//  movieUpdate(key){
-//    this.reRender(
-//      `
-//          <h4 class="media-heading">${this.movies[key].Title}</h4>
-//              Year: <input id="updateYear" type="text" value="${this.movies[key].Year}" /><br/>
-//          Director: <input id="updateDirector" type="text" value="${this.movies[key].Director}" /><br/>
-//          Actors: <input id="updateActors" type="text" value="${this.movies[key].Actors}" /><br/>
-//          <button class="btn btn-success" onclick="component.updateMovie(${key})">Save</button>
-//      `,document.getElementById('movieDetailsInfo'));
-//  }
-// }
-
-// let component = new Component();
-// component.movieList();
-// component.movieCreate();
+} 
+  let component = new Component();
+  component.bookDesignLayout();

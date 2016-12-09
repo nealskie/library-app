@@ -1,4 +1,4 @@
-/*!
+bvibo/*!
  * Materialize v0.97.8 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
@@ -14,6 +14,20 @@
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important;
 }
+
+
+body {
+
+ background:url(../img/lib.jpg);
+background-repeat:no-repeat;
+background-color: grey;
+background-size:cover;
+background-attachment: fixed;
+background-position: center center;
+
+}
+
+
 
 .materialize-red-text.text-lighten-5 {
   color: #fdeaeb !important;
@@ -2040,7 +2054,7 @@
 }
 
 .grey-text {
-  color: #9e9e9e !important;
+  color: #5df50b !important;
 }
 
 .grey.lighten-5 {
@@ -2064,7 +2078,7 @@
 }
 
 .grey-text.text-lighten-3 {
-  color: #eeeeee !important;
+  color:  !important;
 }
 
 .grey.lighten-2 {
@@ -4615,7 +4629,7 @@ small {
 
 .card .card-content p {
   margin: 0;
-  color: inherit;
+  color: black;
 }
 
 .card .card-content .card-title {
@@ -6000,7 +6014,7 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field label {
-  color: #9e9e9e;
+  color: #fff;
   position: absolute;
   top: 0.8rem;
   left: 0;
@@ -7671,7 +7685,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider .slides li .caption {
-  color: #fff;
+  color: #5df50b;
   position: absolute;
   top: 15%;
   left: 15%;
@@ -7680,7 +7694,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider .slides li .caption p {
-  color: #e0e0e0;
+  color: #C4D400b;
 }
 
 .slider .slides li.active {
