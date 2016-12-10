@@ -43,7 +43,7 @@
           "id": 6,
           "name": "HTML & CSS",
           "description": "Every day, more and more people want to learn some HTML and CSS. Joining the professional web designers and programmers are new audiences who need to know a little bit of code at work (update a content management system or e-commerce store) and those who want to make their personal blogs more attractive. Many books teaching HTML and CSS are dry and only written for those who want to become programmers, which is why this book takes an entirely new approach.",
-          "image": "img/sample2.jpg",
+          "image": "img/html.jpg",
         },
         {
 
@@ -63,7 +63,7 @@
 
           "id": 9,
           "name": "Moby Dick",
-          "description": "Moby-Dick; or, The Whale is a novel by American writer Herman Melville, published in 1851 during the period of the American Renaissance. Sailor Ishmael tells the story of the obsessive quest of Ahab, captain of the whaler the Pequod, for revenge on Moby Dick, the white whale that on the previous whaling voyage bit off Ahab's leg at the knee",
+          "description": "Moby-Dick; or, The Whale is a novel by American writer Herman Melville, published in 1851 during the period of the American Renaissance. Sailor Ishmael tells the story of the obsessive quest of Ahab, captain of the whaler the Pequod, for revenge on Moby Dick, the white whale that on the previous whaling voyage bit off Ahab's leg at the knee.",
           "image": "img/mob.jpg",
           "Author": "yuson",
         },
@@ -122,7 +122,28 @@
       }   
       this.bookList();
     }
+    
+    updateBookApp(id){
 
+      id = id+1;
+      let bookDummy = {
+        "id" :  id,
+
+        "name" : $('#bookname').val(),
+        "description" : $('#bookdes').val(),
+        "image" : $('#bookimg').val()
+      }
+
+      let r = this.book;
+      for(let i=0;i<r.length;i++){
+        if(r[i].id == id){
+          r[i] = bookDummy;
+          break;
+        }
+      }
+
+      this.bookList();
+    }
     
 
     SearchBookById(id){
@@ -189,7 +210,7 @@ class Component extends App{
 
 
             </div>
-
+            		<div id="updateBook"></div>
                     <div id="Homepage"></div>
                     <div id="Homepage"></div>
                     <div id="bookRecent"></div>
@@ -269,10 +290,21 @@ class Component extends App{
                       <p>${r.description}</p>
                     </div>
                   <div class="card-action small"> 
-                     <span onclick="component.bookList()" class="new badge small" data-badge-caption="">Back to List</span>
-                     <span onclick="component.bookDelete(${r.id})" class="new badge small red" data-badge-caption="">Delete Base</span>
-                   
-                    </div>            
+                  	<div class="rating-container">
+    <img class="star" src="img/star.png">
+    <img class="star" src="img/star.png">
+    <img class="star" src="img/star.png">
+    <img class="star" src="img/star.png">
+    <img class="star" src="img/star.png">
+    
+</div>
+           
+                    <button onclick="component.updateBook(${r.id})" class="btn waves-effect waves-light">Update</button>
+                     <button onclick="component.bookDelete(${r.id})" class="btn waves-effect waves-light">Delete</button>
+     				 <button onclick="component.bookList()" class="btn waves-effect waves-light">Back to List</button>
+
+                    </div>
+
                   </div>     
                 </div>   
                 
@@ -287,6 +319,7 @@ class Component extends App{
           $('#bookRecent').hide();
           $('#bookList').hide();
           $('#latestBook').hide();
+          $('#updateBook').hide();
 
             $('#Homepage').hide();
         }
@@ -345,7 +378,8 @@ class Component extends App{
           $('#bookList').show();
           $('#viewBook').hide();
           $('#bookRecent').hide();
-          $('#latestBook').hide();    
+          $('#latestBook').hide();
+          $('#updateBook').hide();    
                $('#Homepage').hide();
         }
 
@@ -383,6 +417,7 @@ class Component extends App{
         }
 
 
+
         bookRecent(){
           
           let html = `
@@ -390,7 +425,7 @@ class Component extends App{
            <div class="slider">
               <ul class="slides">
                 <li>
-                  <img src="img/collections.jpeg"> <!-- random image -->
+                  <img src="img/collections.png"> <!-- random image -->
                   <div class="caption center-align">
                     <h3>Welcome to Nealskie Library App</h3>
                     <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
@@ -414,7 +449,7 @@ class Component extends App{
                   </div>
                 </li>
                 <li>
-                  <img src="img/data.jpeg"> <!-- random image -->
+                  <img src="img/data.jpg"> <!-- random image -->
                   <div class="caption center-align">
                     <h3>Welcome to Nealskie Library App</h3>
                     <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
@@ -518,22 +553,63 @@ class Component extends App{
           $('#Homepage').hide();    
         }
 
-        Homepage(){
-          let html=`
+
+       updateBook(id){
+
+      id = id - 1;
+      let html = `
+
+      <div class="row">
+      <div class="input-field col s6">
+      <h5><B>Update to Latest Book:</B></h5>
+      <tr>
+      <input id="bookname" type="text" class="validate" value="${this.book[id].name}"></div>
+      <input id="bookimg" type="text" class="validate" value="${this.book[id].image}"></div>
+      <div class="input-field col s6">
+      <h5><B>Update Description</B></h5>
+
+
+      <input id="bookdes" type="text" class="validate" value="${this.book[id].description}"></div>
+      </div>
+      <a onclick="component.updateBookApp(${id})" class="waves-effect blue waves-light btn">Update</a>
+
+      `;  
+      this.reRender(`
+
+        ${html}
+
+        `,document.getElementById("updateBook"));   
+
+      $('#bookList').hide();
+      $('#viewBook').hide();
+      $('#updateBook').show();
+      $('#bookRecent').hide();  
+      $('#latestBook').hide();
+      $('#Homepage').hide();    
+
+    }
+
+
+                 
+
+
+                  
+                  Homepage(){
+                    let html=`
 
 
 
-          `;
-           this.reRender(`
-              ${html}
-              `,document.getElementById("latestBook"));
-            $('#latestBook').hide();
-            $('#bookList').hide();
-            $('#viewCar').hide();
-            $('#bookRecent').show();  
-            $('#Homepage').hide();  
+                    `;
+                     this.reRender(`
+                        ${html}
+                        `,document.getElementById("latestBook"));
+                      $('#latestBook').hide();
+                      $('#bookList').hide();
+                      $('#viewCar').hide();
+                      $('#bookRecent').show();  
+                      $('#Homepage').hide();  
 
-        }
+                  }
 
 } 
   let component = new Component();
