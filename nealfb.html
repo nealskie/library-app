@@ -72,21 +72,8 @@ FB.api('/me', function(response) {
 console.log('Successful login for: ' + response.name);
 document.getElementById('status').innerHTML =
 'Thanks for logging in, ' + response.name + '!';
+  window.open('https://decodeapp-herokuyuson2.herokuapp.com/app.html#');
 }); 
-window.open('https://decodeapp-herokuyuson2.herokuapp.com/app.html#');
-this.fbname = [
-{
-"name": "Neal Yuson",
-"name": "Joe Syl",
-"name": "Preciuos Dianne",
-"name": "kate upton",
-}
-];
-for (var i = 0; i < this.fbname.length; i++) {
-if (response.name == fbname) {
-window.open('https://decodeapp-herokuyuson2.herokuapp.com/app.html#');
-}
-}
 }
 </script>
 
