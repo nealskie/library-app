@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Fb Page Login</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<script>
+  
+  <head>
+    <style>
+img {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+    <title>Log In to Let Go</title>
+    <meta charset="UTF-8">
+  </head>
+  
+<body background ="http://www.pixelstalk.net/wp-content/uploads/2016/06/3D-love-hear-high-resolution-images-620x388.jpg">
+    <h1 style="text-align:center;color:Maroon ;">click LOG IN to go and express your feeling ;)</h1>
+  <img src="https://media.giphy.com/media/10YHYmVzXPFLHi/giphy.gif">  
+  <script>
+    
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -17,8 +28,7 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-    } 
-  else {
+    } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -66,41 +76,33 @@
   }(document, 'script', 'facebook-jssdk'));
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
+    
+    
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
+    FB.api('/me', function(response) {  
+      console.log('Successful login for: ' + response.name +' your email is ');
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });        
-  window.open('https://decodeapp-herokuyuson2.herokuapp.com/app.html#');
-    this.fbname = [
-      {
-        "name": "Neal Yuson",
-        "name": "Joe Syl",
-        "name": "Shane Alanys Goloran Quisay",
-        "name": "Horace Europa",
-      }
-    ];
-    for (var i = 0; i < this.fbname.length; i++) {
-      if (response.name == fbname) {
-          window.open('https://decodeapp-herokuyuson2.herokuapp.com/app.html#');
-      }
-    }
-    }
+        'Thanks for logging in, ' + response.name + '!';''
+      window.open("http://decodeapp-herokuyuson2.herokuapp.com/")
+});
+  }
 </script>
-  
+
 <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
+  <br>
+  <center><fb:login-button scope="public_profile,email" data-size="xlarge" onlogin="checkLoginState();">
+          </fb:login-button>
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+  <h3><div id="status">
+      </div>
+  </h3>
 
-<div id="status">
-</div>
+  </center>
 
 </body>
 </html>
